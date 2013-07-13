@@ -13,7 +13,7 @@ _minDiff = 1000;
 
 _iteration = 85;
 _currentDiffrence = 0;
-
+_diffrence = 0;
 while{true} do {
 	skipTime _currentAcc;
 	//get Server time;
