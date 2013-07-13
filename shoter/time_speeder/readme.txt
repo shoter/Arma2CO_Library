@@ -5,7 +5,7 @@ Overview : Speeds the time on the server and clients. It also try to synchronize
 
 GLOBAL : YES
 LOCAL  : NO
-INIT   : NESSESARY
+INIT   : NECESSARY
 Config : Configurable
 
 Languages :

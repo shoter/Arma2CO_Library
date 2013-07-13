@@ -3,7 +3,7 @@ Author : Shoter
 
 GLOBAL : NO
 LOCAL  : YES
-INIT   : NESSESARY
+INIT   : NECESSARY
 Config : Configurable
 
 Languages :
