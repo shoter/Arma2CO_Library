@@ -1,8 +1,14 @@
+Script name : Soldier Interaction
+Author : Shoter
+
 GLOBAL : NO
+LOCAL  : YES
+INIT   : NESSESARY
+Config : Configurable
 
 Languages :
 English - en
-Polish - pl
+Polish  - pl
 
 How to use :
 
