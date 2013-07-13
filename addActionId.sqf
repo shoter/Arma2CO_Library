@@ -1,0 +1,1 @@
+_index = 10;//[SHOTER]Interactive_soldierAA_S_is_Interaction;AA_S_is_leaderQuestion;AA_S_is_pushSoldier;AA_S_is_cancel;
