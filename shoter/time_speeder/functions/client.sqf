@@ -1,4 +1,4 @@
-sleep 3;
+sleep (S_ts_synchroFrequency * S_ts_frequency);
 _divider = 3600.0 / S_ts_frequency;
 
 S_ts_earlyAcceleration = S_ts_earlyAcceleration / _divider;
@@ -11,7 +11,7 @@ _acceleration = "normal";
 _maxDiff = -1000;
 _minDiff = 1000;
 
-_iteration = 85;
+_iteration = 0;
 _currentDiffrence = 0;
 _diffrence = 0;
 while{true} do {
@@ -44,9 +44,10 @@ while{true} do {
 	};
 	
 	_currentDiffrence = _diffrence;
+	Gracz sidechat format["%1",_diffrence];
 	_iteration = _iteration + 1;
 	_oldTime = S_ts_serverTime;
-	};
+	
 	
 	if(S_ts_debug) then {
 	//change diffrence to seconds
@@ -57,6 +58,10 @@ while{true} do {
 	_normalAcc = S_ts_acceleration * 3600;
 	hint format["Debug message\n_serverTime = %1\n_myTime=%2\n_diffrence=%3\n_maxDiff=%5\n_minDiff=%6\nAcceleration=%4\nNormalAcc=%8\niteration=%7", _serverTime, _clientTime, _diffSec, _accSec, _maxDiffSec, _minDiffSec, _iteration, _normalAcc ];
 	};
+	
+	};
+	
+	
 	
 	sleep S_ts_frequency;
 	
