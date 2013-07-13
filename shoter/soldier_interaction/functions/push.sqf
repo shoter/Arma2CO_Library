@@ -7,6 +7,19 @@ _soldier removeAction AA_S_si_pushSoldier;
 _soldier removeAction AA_S_si_cancel;
 _soldier removeAction AA_S_si_Interaction;
 
+if( !(isNull S_si_lastSoldier) ) then {
+hint "not null";
+S_si_lastSoldier removeAction AA_S_si_leaderQuestion;
+S_si_lastSoldier removeAction AA_S_si_pushSoldier;
+S_si_lastSoldier removeAction AA_S_si_cancel;
+S_si_lastSoldier removeAction AA_S_si_Interaction;
+
+if( S_si_lastSoldier != _soldier ) then {
+	AA_S_si_Interaction = S_si_lastSoldier addAction [STR_s_si_interaction,S_si_directory + "functions\interaction.sqf", "", 0, false, true];
+	};
+};
+S_si_lastSoldier = _soldier;
+
 _solX = getpos _soldier select 0;
 _solY = getpos _soldier select 1;
 
