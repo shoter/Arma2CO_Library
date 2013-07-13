@@ -16,7 +16,6 @@ _currentDiffrence = 0;
 
 while{true} do {
 	skipTime _currentAcc;
-	
 	//get Server time;
 	_serverTime = S_ts_serverTime;
 	_clientTime = daytime;
@@ -26,14 +25,15 @@ while{true} do {
 	if( _diffrence > S_ts_late ) then { //client is faster than server 
 	_currentAcc = S_ts_earlyAcceleration;
 	} else {
-		if(_diffrence < (-S_ts_late)) then {
+		if(_diffrence < (-S_ts_late)) then { //client is slower than server
 		_currentAcc = S_ts_lateAcceleration;
-		} else {
+		} else { //client have nearly same time as server
 		_currentAcc = S_ts_acceleration;
 		};
 	
 	};
 	
+	//FOR DEBUG.
 	if( _diffrence > _maxDiff ) then
 	{
 	_maxDiff = _diffrence;
@@ -43,14 +43,12 @@ while{true} do {
 	_minDiff = _diffrence;
 	};
 	
-	
 	_currentDiffrence = _diffrence;
 	_iteration = _iteration + 1;
 	_oldTime = S_ts_serverTime;
 	};
 	
 	if(S_ts_debug) then {
-	
 	//change diffrence to seconds
 	_diffSec = _currentDiffrence * 3600;
 	_minDiffSec = _minDiff * 3600;
